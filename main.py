@@ -194,15 +194,14 @@ def updateTimer():
         t.hideturtle()  # Hide the turtle when the time is up
 
 
-
-
-
 def showMenu():
     menu_turtle.write("Game Menu", align="center", font=("Arial", 24, "bold"))
     timer_menu_turtle.write(f"Timer: {int(time_left)}s", align="center", font=("Arial", 16, "normal"))
     target_menu_turtle.write(f"Target Size: {target_size}", align="center", font=("Arial", 16, "normal"))
     button_turtle.write("Start", align="center", font=("Arial", 24, "bold"))
     difficulty_menu_turtle.write("Difficulty:", align="center", font=("Arial", 16, "bold"))
+
+
 def startGame(x, y):
     if -50 < x < 50 and -130 < y < -110:  # Check if the click is within the button area
         button_turtle.clear()
@@ -210,6 +209,7 @@ def startGame(x, y):
         goRandomPlace()
         updateScore()
         updateTimer()
+
 
 def menuClick(x, y):
     global time_left, target_size, difficulty
@@ -269,6 +269,7 @@ def menuClick(x, y):
         medium_turtle.clear()
         hard_turtle.clear()
         startGame(x, y)
+
 
 showMenu()
 screen.onclick(menuClick)
